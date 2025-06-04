@@ -1,0 +1,22 @@
+name: Server CI/CD
+
+on:
+  push:
+    branches: 
+      - main
+
+jobs:
+  deploy:
+    steps:
+      name: Deploy to Server
+      runs-on: ubuntu-latest
+      steps:
+        - name: SSH to Web Host and execute commands
+          uses: appleboy/ssh-action@v1.0.3
+          with:
+            host: ${{ secrets.WEB_HOST }}
+            username: ${{ secrets.WEB_USER }}
+            password: ${{ secrets.PASSWORD }}
+            port: ${{ secrets.PORT }}
+            script: |
+              ls
