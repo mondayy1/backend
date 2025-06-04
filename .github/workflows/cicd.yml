@@ -18,6 +18,6 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            git pull origin main
             cd backend
+            git pull origin main
             ls
