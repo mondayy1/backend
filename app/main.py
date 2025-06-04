@@ -160,13 +160,16 @@ def db_connection(db_name):
     cursor.close()
     conn.close()
 
+"""
 ################# Redis #################
 redis_client = redis.Redis(host='localhost', port=6380, db=0)
 redis_client.flushdb() # TECH DEBT
 caching_time = 3600*12 #Cache data for 12 hours
 
 #########################################
+"""
 
+"""
 #------Start Stocks DB------------#
 with db_connection(STOCK_DB) as cursor:
   cursor.execute("SELECT DISTINCT symbol FROM stocks")
@@ -219,6 +222,7 @@ with db_connection(INSTITUTE_DB) as cursor:
   cik_list = [row[0] for row in cursor.fetchall()]
 #------End Institute DB------------#
 
+
 #------Start Stock Screener--------#
 with open(f"json/stock-screener/data.json", 'rb') as file:
     stock_screener_data = orjson.loads(file.read())
@@ -241,6 +245,7 @@ for item in searchbar_data:
         item['isin'] = None
 
 etf_set = set(etf_symbols)
+"""
 
 
 ### TECH DEBT ###
