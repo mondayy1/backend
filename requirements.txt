@@ -1,5 +1,4 @@
 benzinga
-urllib3==1.26.18
 yfinance
 datetime
 pandas
