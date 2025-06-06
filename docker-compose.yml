@@ -1,10 +1,11 @@
 version: '3.8'
 services:
-    fastapi:
-      build:
-        context: ./
-        dockerfile: Dockerfile
-      ports:
-        - "8000:8000"
-      tty: true
-      stdin_open: true
+  fastapi:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: final_studentID:v1
+    ports:
+      - "8000:8000"
+    tty: true
+    stdin_open: true
