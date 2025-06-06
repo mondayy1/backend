@@ -4,7 +4,7 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
-    image: final_studentID:v1
+    image: final_2020038040:v1
     ports:
       - "8000:8000"
     tty: true
