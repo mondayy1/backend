@@ -18,6 +18,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
+            cd final_2020038040
+            ls -al
             cd backend
             git pull origin main
-            ls
