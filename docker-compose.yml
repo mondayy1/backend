@@ -7,5 +7,6 @@ services:
     image: final_2020038040:v1
     ports:
       - "8000:8000"
-    tty: true
-    stdin_open: true
+    #tty: true
+    #stdin_open: true
+    command: sh -c "poetry shell && uvicorn main:app --port 8000"
